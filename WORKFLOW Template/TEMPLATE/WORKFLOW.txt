@@ -1,0 +1,24 @@
+Einfacher Ablauf (immer gleich)
+-------------------------------
+1) Lokal entwickeln, kurze Schritte.
+2) Commit und Push.
+3) Cloudflare Pages baut automatisch und erzeugt eine Preview-URL.
+4) Öffne die Preview-URL. Prüfe:
+   - Keine Fehler in der Browser-Konsole
+   - Keine 404/500 im Netzwerk-Tab
+   - Seitenaufbau stabil (keine großen Layout-Shifts)
+   - Bedienbarkeit (Tastatur-Fokus sichtbar, Alternativtexte vorhanden)
+5) Ist alles ok? Merge auf `main`. Das triggert den Production-Deploy.
+6) Kurz die Live-Seite öffnen und prüfen.
+
+Wichtige Prinzipien
+-------------------
+- Kleine Schritte. Lieber 5 kleine Pushes als 1 riesiger.
+- Erst funktional, dann „Wow“-Effekte.
+- Entscheidungen kurz begründen (im PR-Text).
+- Messung schlägt Gefühl: erst prüfen, dann optimieren.
+
+Artefakte
+---------
+- `_headers` und `_redirects` (falls gebraucht) liegen im Build-Output und steuern Caching/Routing.
+- Previews gehören kommentiert/gelinkt im PR.

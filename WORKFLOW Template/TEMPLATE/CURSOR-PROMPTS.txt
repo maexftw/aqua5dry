@@ -1,0 +1,29 @@
+Cursor 2.0 – Quickstart Prompts (Copy/Paste)
+============================================
+
+1) Kickoff (Architect – Plan zuerst)
+------------------------------------
+Ziel: [kurz beschreiben, z. B. "Hero mit Parallax und CTA"].
+Erstelle einen kompakten Plan (max. 10 Zeilen): Ziele, Annahmen, Risiken, Dateiliste.
+Wenn dir Informationen fehlen, triff eine sinnvolle Annahme und schreibe sie explizit dazu.
+
+2) Implementer – Minimal funktionsfähig
+---------------------------------------
+Setze die minimal funktionsfähige Version um. Erstelle klare Diffs und kurze Commits.
+Dokumentiere Annahmen als Bullets für den PR-Text.
+
+3) QA (Browser-Agent) – Vorschau prüfen
+---------------------------------------
+Öffne die Cloudflare Preview-URL: <HIER-LINK-EINFÜGEN>.
+- Prüfe Konsole (Fehler/Warnungen auflisten)
+- Prüfe Network (404/500 und große Assets)
+- Prüfe A11y-Basics (Fokus sichtbar, Alt-Texte, Reduced Motion)
+- Schlage konkrete Fixes vor (mit Verweis auf Dateien/Zeilen)
+
+4) Release – PR-Text generieren
+-------------------------------
+Erzeuge einen kurzen PR-Text:
+- Was wurde gemacht (3–5 Bulletpoints)
+- Annahmen/Offene Punkte
+- Link zur Preview-URL
+- Nächste ToDos (2–3 Bulletpoints)

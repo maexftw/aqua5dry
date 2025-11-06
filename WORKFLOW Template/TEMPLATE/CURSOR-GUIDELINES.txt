@@ -1,0 +1,8 @@
+Cursor – Arbeitsprinzipien
+--------------------------
+- Mache zuerst einen sehr kurzen Plan (Ziele, Annahmen, Risiken). Max. 10 Zeilen.
+- Arbeite auch bei kleinen Unklarheiten weiter; dokumentiere Annahmen.
+- Nutze den integrierten Browser aktiv für Funktions- und A11y-Checks.
+- Optimiere nach Messwert: Latenz, Größe, Layout-Shifts.
+- Keine neuen Tools ohne klaren Nutzen.
+- Halte Änderungen klein und PRs fokussiert.

@@ -1,0 +1,11 @@
+Deploy-Varianten (du brauchst nur eine)
+---------------------------------------
+A) Git-Integration (empfohlen)
+- Verbinde dein GitHub-Repo in Cloudflare Pages.
+- Jeder Push baut automatisch. PRs erzeugen Preview-Deploys.
+- Production deployt bei Merge auf `main` (Standard).
+
+B) Eigene CI mit Wrangler (optional, mehr Kontrolle)
+- Lege API-Token/Account-ID als Secrets im Repo an.
+- CI triggert `wrangler pages deploy`.
+- Nur nötig, wenn du bewusst nicht die Git-Integration verwenden willst.

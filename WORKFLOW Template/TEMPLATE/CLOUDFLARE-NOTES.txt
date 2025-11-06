@@ -1,0 +1,10 @@
+Cloudflare Pages – Hinweise
+---------------------------
+- `_headers` steuert Caching und Security-Header (als Textdatei im Output).
+- `_redirects` steuert Weiterleitungen und SPA-Routing.
+- Jeder PR bekommt automatisch eine Preview-URL (praktisch für Abnahme).
+- Du kannst später Workers/Rules ergänzen, ohne den Host zu wechseln.
+
+Tipp:
+- Für gehashte Assets: langes Caching (`Cache-Control: public, max-age=31536000, immutable`).
+- Für HTML: kurzes Caching, damit Änderungen schnell live sind.

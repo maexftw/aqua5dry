@@ -1,0 +1,7 @@
+START-HIER
+----------
+1) Lies `TEMPLATE/README.txt`.
+2) Entscheide dich für die Deploy-Variante (Git-Integration empfohlen).
+3) Richte Cloudflare laut `TEMPLATE/CLOUDFLARE-SETUP.txt` ein.
+4) Halte dich im Alltag an `TEMPLATE/WORKFLOW.txt` und `TEMPLATE/QUALITY-GATES.txt`.
+5) Die Regeln in `.cursor/rules/` geben Cursor Orientierung, ohne zu limitieren.

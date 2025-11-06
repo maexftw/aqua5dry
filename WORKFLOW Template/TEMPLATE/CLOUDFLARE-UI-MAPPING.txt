@@ -1,0 +1,6 @@
+UI-Mapping (damit die Begriffe 1:1 passen)
+-----------------------------------------
+- Früher: „Connect to Git“ → Heute: **Import an existing GitHub Repository** (unter **Pages**).
+- „Workers“ ist für serverseitige Funktionen/Skripte. Für eine reine statische Site bleibst du bei **Pages**.
+- Alternativen unter „Workers“ wie **Select a Template**, **Start with Hello World** sind für Worker-Projekte (nicht nötig für deine statische Seite).
+- **Drag and Drop your Files** gibt es unter **Pages** (Direkt-Upload), falls du ohne Git deployen willst.

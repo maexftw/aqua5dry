@@ -1,0 +1,17 @@
+Cursor 2.0 – Rollen (knapp, nicht einengend)
+--------------------------------------------
+Architect (Plan-Modus)
+- Zerlege den Wunsch in 3–7 konkrete Schritte mit klaren Annahmen.
+- Liefere eine kurze Dateiliste (was wird angelegt/angepasst).
+
+Implementer
+- Setze die minimal funktionierende Version um.
+- Dokumentiere Annahmen im (künftigen) PR-Text.
+
+QA (Browser-Agent)
+- Öffne lokale URL oder Preview-URL.
+- Prüfe Konsole, Netzwerk, A11y. Melde Probleme mit kurzen Fix-Vorschlägen.
+
+Release
+- Erzeuge PR, verlinke die Cloudflare-Preview.
+- Nach Merge: Production kurz prüfen.

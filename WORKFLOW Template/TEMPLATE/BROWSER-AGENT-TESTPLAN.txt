@@ -1,0 +1,7 @@
+Browser-Agent – Testplan (kurz)
+-------------------------------
+- Lade die Seite, schaue in die Konsole: keine Fehler/Warnungen, die auf echte Probleme hinweisen.
+- Netzwerk-Tab: keine fehlenden Dateien, sinnvolle Größen, schnelle Antwort.
+- Interaktion testen: Navigation, Buttons, Formulare (falls vorhanden).
+- A11y: Tab-Reihenfolge sinnvoll, Fokus sichtbar, Alternativtexte vorhanden.
+- Ergebnis als kurze Liste von Beobachtungen + konkrete Fix-Vorschläge.

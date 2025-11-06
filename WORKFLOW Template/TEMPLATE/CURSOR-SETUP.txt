@@ -1,0 +1,10 @@
+Cursor 2.0 – Setup (einmalig pro Projekt)
+-----------------------------------------
+1) Öffne das Projekt-Repo in Cursor.
+2) Prüfe unter Settings → Project Rules, ob die Dateien aus `.cursor/rules/*.mdc` sichtbar sind.
+3) Setze die Regel-Anwendung auf „Always“ oder „Auto“ (je nach Bedarf).
+4) Starte mit dem „Kickoff (Architect)“-Prompt aus `TEMPLATE/CURSOR-PROMPTS.txt`.
+
+Hinweis:
+- Die Regeln liegen im Repo und werden versioniert. Cursor nutzt sie automatisch im Kontext.
+- Für Tests nutze den integrierten Browser-Agent und öffne die Cloudflare Preview-URL.

@@ -1,0 +1,9 @@
+Quality-Gates (vor Merge)
+-------------------------
+- Keine Konsole-Errors, keine 404/500.
+- Vorschau-URL manuell einmal durchklicken.
+- Seitenaufbau stabil, Interaktion funktioniert.
+- A11y-Basics: sichtbarer Fokus, Alternativtexte, `prefers-reduced-motion` respektieren.
+- Performance-Grundregeln: kleine Assets, nur notwendiges JS bei Initial-Load.
+
+Wenn etwas fehlt/unklar ist, notiere es im PR-Text als offene Annahme.

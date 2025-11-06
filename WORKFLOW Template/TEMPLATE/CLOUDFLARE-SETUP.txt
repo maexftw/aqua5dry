@@ -1,0 +1,31 @@
+Cloudflare Pages – Einrichtung (mit exakten UI-Bezeichnungen)
+-------------------------------------------------------------
+Ort im Dashboard:
+- Menü: **Workers & Pages** → Button **Create application**.
+
+Du hast zwei Hauptpfade. Für statische Sites nimm **Pages** (nicht **Workers**).
+
+A) Git-Integration über „Pages“ (empfohlen)
+1) Klicke **Pages**.
+2) Wähle **Import an existing GitHub Repository**.
+   - Falls abgefragt: Installiere/autorisiere die **Cloudflare Workers and Pages** GitHub App für dein Repo.
+3) Wähle dein Repository aus.
+4) Build-Einstellungen:
+   - **Production branch**: z. B. `main`.
+   - **Build command**: dein Build (z. B. `npm run build`).
+   - **Build output directory**: z. B. `dist` (der Ordner mit den fertigen, statischen Dateien).
+5) **Save and Deploy**. Der erste Build startet.
+6) Ergebnis:
+   - Jede Änderung per Push triggert einen Build.
+   - **Pull Requests** erhalten automatisch **Preview-Deployments** mit einer eigenen URL.
+   - Der Merge auf den Production-Branch deployt **Production**.
+
+B) Direct Upload (optional, wenn du manuell/aus CI hochladen willst)
+1) Klicke **Pages**.
+2) Wähle **Drag and Drop your Files** (für manuelles Hochladen) oder nutze Wrangler in CI.
+3) Nutze diesen Weg nur, wenn du bewusst **keine** Git-Integration willst.
+
+Typische Extras
+- **_headers**: Caching- und Security-Header (Textdatei im Output).
+- **_redirects**: Weiterleitungen & SPA-Routing (Textdatei im Output).
+- **Custom Domain**: Im Projekt unter **Settings** hinzufügen.

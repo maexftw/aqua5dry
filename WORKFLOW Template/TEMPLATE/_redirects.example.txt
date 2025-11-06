@@ -1,0 +1,3 @@
+# Beispiele für Redirects (kommentiert, anpassen und bei Bedarf verwenden)
+# /altpfad    /neu    301
+# /*          /index.html   200   # SPA-Fallback (nur nutzen, wenn du wirklich ein SPA-Routing brauchst)

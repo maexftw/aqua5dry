@@ -1,0 +1,6 @@
+# Beispiel für Cache-Header (kommentiert, anpassen und bei Bedarf verwenden)
+# /* 
+#   Cache-Control: public, max-age=300
+#
+# /assets/*
+#   Cache-Control: public, max-age=31536000, immutable

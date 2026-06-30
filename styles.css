@@ -209,8 +209,7 @@ a.button {
   border-color: var(--line);
 }
 
-.choice-panel .button.secondary,
-.cart-panel .button.secondary {
+.choice-panel .button.secondary {
   color: var(--teal);
   background: var(--paper);
   border-color: var(--line);
@@ -291,6 +290,7 @@ a.button {
 
 main > section:not(.hero):not(.trust-band) {
   padding: clamp(56px, 8vw, 92px) clamp(20px, 6vw, 88px);
+  scroll-margin-top: 96px;
 }
 
 .section-heading {
@@ -326,7 +326,8 @@ main > section:not(.hero):not(.trust-band) {
 }
 
 .choice-panel,
-.cart-panel {
+.result-panel {
+  min-width: 0;
   padding: clamp(20px, 3vw, 30px);
   background: var(--paper);
   border: 1px solid var(--line);
@@ -334,7 +335,7 @@ main > section:not(.hero):not(.trust-band) {
   box-shadow: var(--shadow);
 }
 
-.cart-panel {
+.result-panel {
   position: sticky;
   top: 98px;
 }
@@ -347,6 +348,91 @@ main > section:not(.hero):not(.trust-band) {
 .panel-header p {
   margin: 6px 0 0;
   color: var(--muted);
+}
+
+.calculator-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.field-label {
+  display: grid;
+  gap: 8px;
+  color: var(--teal-dark);
+  font-weight: 900;
+}
+
+.field-label input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 16px;
+  color: var(--ink);
+  background: var(--foam);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.field-label input:focus {
+  outline: 3px solid rgba(106, 168, 51, 0.25);
+  border-color: var(--green);
+}
+
+.dose-mode {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.dose-mode legend {
+  grid-column: 1 / -1;
+  margin-bottom: 2px;
+  color: var(--teal-dark);
+  font-weight: 900;
+}
+
+.mode-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  min-height: 118px;
+  padding: 16px;
+  background: var(--foam);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.mode-card:has(input:checked) {
+  background: #eef8e8;
+  border-color: var(--green);
+}
+
+.mode-card input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--green);
+}
+
+.mode-card span {
+  display: grid;
+  gap: 4px;
+}
+
+.mode-card strong {
+  color: var(--ink);
+}
+
+.mode-card small {
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .variant-grid {
@@ -367,6 +453,10 @@ main > section:not(.hero):not(.trust-band) {
   border: 2px solid var(--line);
   border-radius: var(--radius);
   cursor: pointer;
+}
+
+.package-card {
+  cursor: default;
 }
 
 .variant-card:hover,
@@ -395,6 +485,7 @@ main > section:not(.hero):not(.trust-band) {
   font-weight: 900;
 }
 
+.calculator-result,
 .recommendation-card {
   display: grid;
   gap: 8px;
@@ -403,6 +494,27 @@ main > section:not(.hero):not(.trust-band) {
   background: var(--foam);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+}
+
+.calculator-result {
+  background: #eef8e8;
+  border-color: rgba(106, 168, 51, 0.35);
+}
+
+.calculator-result span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.calculator-result strong {
+  color: var(--teal-dark);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1;
+}
+
+.calculator-result p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .recommendation-card strong {
@@ -421,17 +533,6 @@ main > section:not(.hero):not(.trust-band) {
   margin: 20px 0;
   padding-left: 20px;
   color: var(--muted);
-}
-
-.selection-hint {
-  min-height: 24px;
-  margin: 0 0 12px;
-  color: var(--orange);
-  font-weight: 800;
-}
-
-.selection-hint.ready {
-  color: var(--teal);
 }
 
 .problem-section,
@@ -625,11 +726,12 @@ details p {
     justify-self: start;
   }
 
-  .cart-panel {
+  .result-panel {
     position: static;
   }
 
   .variant-grid,
+  .dose-mode,
   .insight-grid,
   .benefit-grid,
   .dosage-flow {
@@ -725,7 +827,7 @@ details p {
   }
 
   main > section:not(.hero):not(.trust-band) {
-    padding: 52px 18px;
+    padding: 52px 8px;
   }
 
   .section-heading {

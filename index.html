@@ -85,73 +85,93 @@
 
       <section class="buy-section" id="kaufen" aria-labelledby="buy-title">
         <div class="section-heading">
-          <p class="eyebrow">Kaufstrecke</p>
-          <h2 id="buy-title">Größe wählen, Menge im Shop festlegen</h2>
+          <p class="eyebrow">Dosier-Rechner</p>
+          <h2 id="buy-title">Berechnen, wie viel AQUA-5 DRY du brauchst</h2>
           <p>
-            Diese Seite hilft bei der Orientierung. Die finale Menge, der Preis und die Bestellung
-            werden direkt im bestehenden Shop gewählt.
+            Gib dein Teichvolumen ein. Der Rechner empfiehlt die benötigte Pulvermenge und die
+            passende Dosenanzahl für den Shop.
           </p>
         </div>
 
         <div class="buy-layout">
-          <section class="choice-panel" aria-labelledby="variant-title">
+          <section class="choice-panel calculator-panel" aria-labelledby="calculator-title">
             <div class="panel-header">
-              <h3 id="variant-title">Welche Größe passt?</h3>
-              <p>Preisbereich laut Shop-Metadaten: 21,90 bis 59,00 €.</p>
+              <h3 id="calculator-title">Teichvolumen und Einsatz</h3>
+              <p>Basis: 280 g reichen laut Quelle für bis zu 150.000 Liter einmalig.</p>
             </div>
 
-            <div class="variant-grid" role="radiogroup" aria-label="AQUA-5 DRY Inhalt">
-              <button class="variant-card" type="button" data-variant="70" aria-pressed="false">
+            <form class="calculator-form" id="dosage-form">
+              <label class="field-label" for="pond-volume">
+                Teichvolumen in Litern
+                <input id="pond-volume" name="pond-volume" type="number" min="1000" max="1000000" step="500" value="15000" inputmode="numeric">
+              </label>
+
+              <fieldset class="dose-mode">
+                <legend>Einsatz</legend>
+                <label class="mode-card">
+                  <input type="radio" name="dose-mode" value="regular" checked>
+                  <span>
+                    <strong>Regelmäßige Nachdosierung</strong>
+                    <small>Normale Dosis für eingefahrene Anlagen.</small>
+                  </span>
+                </label>
+                <label class="mode-card">
+                  <input type="radio" name="dose-mode" value="start">
+                  <span>
+                    <strong>Filterstart / stark belastet</strong>
+                    <small>Doppelte Dosis für Start, neue Teiche oder hohe Belastung.</small>
+                  </span>
+                </label>
+              </fieldset>
+            </form>
+
+            <div class="variant-grid package-grid" aria-label="Shop-Größen">
+              <article class="variant-card package-card">
                 <span class="variant-size">70 g</span>
-                <span class="variant-use">Einstiegsgröße für kleinere Systeme</span>
+                <span class="variant-use">Kleine Dose für niedrigen Bedarf</span>
                 <span class="variant-price">ab 21,90 €</span>
-              </button>
-              <button class="variant-card" type="button" data-variant="140" aria-pressed="false">
+              </article>
+              <article class="variant-card package-card">
                 <span class="variant-size">140 g</span>
-                <span class="variant-use">Mittelgröße für regelmäßige Nachdosierung</span>
+                <span class="variant-use">Mittlere Dose für regelmäßige Nachdosierung</span>
                 <span class="variant-price">Shoppreis final</span>
-              </button>
-              <button class="variant-card" type="button" data-variant="280" aria-pressed="false">
+              </article>
+              <article class="variant-card package-card">
                 <span class="variant-size">280 g</span>
-                <span class="variant-use">Maxi-Dose, laut Quelle für bis zu 150.000 l einmalig</span>
+                <span class="variant-use">Maxi-Dose für bis zu 150.000 l einmalig</span>
                 <span class="variant-price">bis 59,00 €</span>
-              </button>
+              </article>
             </div>
-
-            <p class="selection-hint" id="selection-hint" role="status">
-              Wähle eine Größe als Orientierung. Die Menge wird im Shop ausgewählt.
-            </p>
-
-            <a class="button primary wide direct-shop" href="https://teichbedarf-discount.de/AQUA-5-DRY-Hochkonzentrierte-Filterbakterien-Teichbakterien-fuer-Koi-Schwimmteich-Aquarium">
-              Im Shop Größe und Menge auswählen
-            </a>
           </section>
 
-          <aside class="cart-panel" aria-labelledby="cart-title">
+          <aside class="result-panel" aria-labelledby="result-title">
             <div class="panel-header">
-              <h3 id="cart-title">Ohne Umweg kaufen</h3>
-              <p>Die Größenkarten ersetzen keinen Rechner. Sie zeigen nur, welche Dose grob passt.</p>
+              <h3 id="result-title">Empfehlung</h3>
+              <p>Die Menge kaufst du anschließend im Shop. Dort wählst du Größe und Anzahl final aus.</p>
+            </div>
+
+            <div class="calculator-result" aria-live="polite">
+              <span>Empfohlene Pulvermenge</span>
+              <strong id="required-grams">28 g</strong>
+              <p id="dose-summary">Für 15.000 Liter bei normaler Nachdosierung.</p>
             </div>
 
             <div class="recommendation-card" id="recommendation-card">
-              <strong id="recommendation-title">Direkt im Shop entscheiden</strong>
+              <strong id="recommendation-title">1x 70 g reicht aus</strong>
               <p id="recommendation-copy">
-                Wenn du deine benötigte Menge kennst, wählst du die passende Größe und Anzahl direkt
-                im Shop. Die 280-g-Dose reicht laut Quelle für bis zu 150.000 Liter einmalig.
+                Im Shop 70 g auswählen. Die genaue Anzahl und der finale Preis werden dort festgelegt.
               </p>
             </div>
 
-            <ul class="shop-check">
-              <li>Größe im Shop wählen: 70 g, 140 g oder 280 g.</li>
-              <li>Anzahl im Shop festlegen, wenn mehr Dosen benötigt werden.</li>
-              <li>Finaler Preis, Versand und Zahlung bleiben sauber im Shop.</li>
+            <ul class="shop-check" id="package-list">
+              <li>1x 70 g</li>
             </ul>
 
             <a
               class="button primary wide"
               href="https://teichbedarf-discount.de/AQUA-5-DRY-Hochkonzentrierte-Filterbakterien-Teichbakterien-fuer-Koi-Schwimmteich-Aquarium"
             >
-              Jetzt im Shop kaufen
+              Empfehlung im Shop eingeben
             </a>
           </aside>
         </div>

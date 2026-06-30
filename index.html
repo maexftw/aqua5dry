@@ -19,10 +19,9 @@
     <header class="site-header">
       <a class="brand product-brand" href="#kaufen" aria-label="AQUA-5 DRY">
         <img
-          src="Images/aqua5dry%20dosen%20ausgeschnitten.png"
-          alt="AQUA-5 DRY"
+          src="Images/LOGO%20-%20HAPPYKOI_2019.png"
+          alt="HAPPYKOI"
         >
-        <span>AQUA-5 <strong>DRY</strong></span>
       </a>
       <nav class="header-nav" aria-label="Hauptnavigation">
         <a href="#vorteile">Vorteile</a>
@@ -36,7 +35,6 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-inner">
           <div class="hero-copy">
             <p class="eyebrow">Filterbakterien für Koi, Schwimmteich und Aquarium</p>
@@ -52,7 +50,6 @@
             <div class="hero-facts" aria-label="Produktfakten">
               <span>Ab 21,90 €</span>
               <span>Sofort verfügbar</span>
-              <span>5/5 bei 1 Bewertung</span>
             </div>
           </div>
           <figure class="hero-product">
@@ -89,17 +86,17 @@
       <section class="buy-section" id="kaufen" aria-labelledby="buy-title">
         <div class="section-heading">
           <p class="eyebrow">Kaufstrecke</p>
-          <h2 id="buy-title">Inhalt wählen, Menge festlegen, im Shop kaufen</h2>
+          <h2 id="buy-title">Größe wählen, Menge im Shop festlegen</h2>
           <p>
-            Der Prototyp simuliert die Auswahl. Die finale Preis- und Bestellabwicklung erfolgt im
-            bestehenden Shop.
+            Diese Seite hilft bei der Orientierung. Die finale Menge, der Preis und die Bestellung
+            werden direkt im bestehenden Shop gewählt.
           </p>
         </div>
 
         <div class="buy-layout">
           <section class="choice-panel" aria-labelledby="variant-title">
             <div class="panel-header">
-              <h3 id="variant-title">Inhalt auswählen</h3>
+              <h3 id="variant-title">Welche Größe passt?</h3>
               <p>Preisbereich laut Shop-Metadaten: 21,90 bis 59,00 €.</p>
             </div>
 
@@ -121,67 +118,41 @@
               </button>
             </div>
 
-            <div class="quantity-row" aria-label="Menge">
-              <span>Menge</span>
-              <div class="stepper">
-                <button type="button" data-qty="decrease" aria-label="Menge verringern">-</button>
-                <output id="quantity-output" aria-live="polite">1</output>
-                <button type="button" data-qty="increase" aria-label="Menge erhöhen">+</button>
-              </div>
-            </div>
-
             <p class="selection-hint" id="selection-hint" role="status">
-              Bitte erst einen Inhalt auswählen.
+              Wähle eine Größe als Orientierung. Die Menge wird im Shop ausgewählt.
             </p>
 
-            <button class="button primary wide" type="button" id="add-to-cart">
-              In den Prototyp-Warenkorb
-            </button>
+            <a class="button primary wide direct-shop" href="https://teichbedarf-discount.de/AQUA-5-DRY-Hochkonzentrierte-Filterbakterien-Teichbakterien-fuer-Koi-Schwimmteich-Aquarium">
+              Im Shop Größe und Menge auswählen
+            </a>
           </section>
 
           <aside class="cart-panel" aria-labelledby="cart-title">
             <div class="panel-header">
-              <h3 id="cart-title">Ihre Auswahl</h3>
-              <p>Bestellung wird im nächsten Schritt im Shop abgeschlossen.</p>
+              <h3 id="cart-title">Ohne Umweg kaufen</h3>
+              <p>Die Größenkarten ersetzen keinen Rechner. Sie zeigen nur, welche Dose grob passt.</p>
             </div>
 
-            <div class="cart-empty" id="cart-empty">
-              Noch kein Inhalt gewählt.
+            <div class="recommendation-card" id="recommendation-card">
+              <strong id="recommendation-title">Direkt im Shop entscheiden</strong>
+              <p id="recommendation-copy">
+                Wenn du deine benötigte Menge kennst, wählst du die passende Größe und Anzahl direkt
+                im Shop. Die 280-g-Dose reicht laut Quelle für bis zu 150.000 Liter einmalig.
+              </p>
             </div>
 
-            <div class="cart-content" id="cart-content" hidden>
-              <div class="cart-item">
-                <img
-                  src="https://teichbedarf-discount.de/media/image/product/1029/sm/aqua-5-dry-hochkonzentrierte-filterbakterien-teichbakterien-fuer-koi-schwimmteich-aquarium.jpg"
-                  alt=""
-                >
-                <div>
-                  <strong id="cart-variant">AQUA-5 DRY</strong>
-                  <span id="cart-note">Preis final im Shop</span>
-                </div>
-                <span id="cart-quantity">1x</span>
-              </div>
+            <ul class="shop-check">
+              <li>Größe im Shop wählen: 70 g, 140 g oder 280 g.</li>
+              <li>Anzahl im Shop festlegen, wenn mehr Dosen benötigt werden.</li>
+              <li>Finaler Preis, Versand und Zahlung bleiben sauber im Shop.</li>
+            </ul>
 
-              <div class="checkout-steps" aria-label="Checkout Fortschritt">
-                <button type="button" data-step="1" class="active">Auswahl</button>
-                <button type="button" data-step="2">Lieferung</button>
-                <button type="button" data-step="3">Zahlung</button>
-              </div>
-
-              <div class="checkout-box" id="checkout-box" aria-live="polite"></div>
-
-              <div class="cart-actions">
-                <button class="button secondary" type="button" id="checkout-prev">Zurück</button>
-                <button class="button primary" type="button" id="checkout-next">Weiter</button>
-                <a
-                  class="button primary shop-final"
-                  id="shop-final"
-                  href="https://teichbedarf-discount.de/AQUA-5-DRY-Hochkonzentrierte-Filterbakterien-Teichbakterien-fuer-Koi-Schwimmteich-Aquarium"
-                >
-                  Im Shop kaufen
-                </a>
-              </div>
-            </div>
+            <a
+              class="button primary wide"
+              href="https://teichbedarf-discount.de/AQUA-5-DRY-Hochkonzentrierte-Filterbakterien-Teichbakterien-fuer-Koi-Schwimmteich-Aquarium"
+            >
+              Jetzt im Shop kaufen
+            </a>
           </aside>
         </div>
       </section>

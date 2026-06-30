@@ -1,7 +1,9 @@
 const DOSE_PER_LITER = 280 / 150000;
 const PACK_SIZES = [280, 140, 70];
+const DEFAULT_VOLUME = 15000;
 
 const volumeInput = document.querySelector("#pond-volume");
+const volumeDisplay = document.querySelector("#volume-display");
 const modeInputs = [...document.querySelectorAll("input[name='dose-mode']")];
 const requiredGrams = document.querySelector("#required-grams");
 const doseSummary = document.querySelector("#dose-summary");
@@ -10,6 +12,8 @@ const recommendationCopy = document.querySelector("#recommendation-copy");
 const packageList = document.querySelector("#package-list");
 const stickyCta = document.querySelector(".sticky-cta");
 const buySection = document.querySelector("#kaufen");
+
+volumeInput.value = String(DEFAULT_VOLUME);
 
 function getSelectedMode() {
   return modeInputs.find((input) => input.checked)?.value || "regular";
@@ -22,6 +26,7 @@ function calculateDose() {
   const grams = Math.ceil(volume * DOSE_PER_LITER * factor);
   const recommendation = recommendPackages(grams);
 
+  updateVolumeSlider(volume);
   requiredGrams.textContent = `${formatNumber(grams)} g`;
   doseSummary.textContent = getDoseSummary(volume, mode);
   recommendationTitle.textContent = recommendation.title;
@@ -75,6 +80,15 @@ function recommendPackages(grams) {
     copy: `Im Shop ${items.join(" plus ")} auswählen. Gesamtmenge: ${formatNumber(best.total)} g.${reserveText}`,
     items
   };
+}
+
+function updateVolumeSlider(volume) {
+  volumeDisplay.textContent = `${formatNumber(volume)} Liter`;
+
+  const min = Number(volumeInput.min) || 0;
+  const max = Number(volumeInput.max) || 1;
+  const progress = ((volume - min) / (max - min)) * 100;
+  volumeInput.style.setProperty("--range-progress", `${Math.min(100, Math.max(0, progress))}%`);
 }
 
 function getDoseSummary(volume, mode) {

@@ -88,8 +88,8 @@
           <p class="eyebrow">Dosier-Rechner</p>
           <h2 id="buy-title">Berechnen, wie viel AQUA-5 DRY du brauchst</h2>
           <p>
-            Gib dein Teichvolumen ein. Der Rechner empfiehlt die benötigte Pulvermenge und die
-            passende Dosenanzahl für den Shop.
+            Zieh dein Teichvolumen auf dem Slider. Der Rechner zeigt dir sofort die benötigte
+            Pulvermenge und eine passende Dosenempfehlung für den Shop.
           </p>
         </div>
 
@@ -101,21 +101,39 @@
             </div>
 
             <form class="calculator-form" id="dosage-form">
-              <label class="field-label" for="pond-volume">
-                Teichvolumen in Litern
-                <input id="pond-volume" name="pond-volume" type="number" min="1000" max="1000000" step="500" value="15000" inputmode="numeric">
-              </label>
+              <div class="slider-control">
+                <div class="slider-header">
+                  <label for="pond-volume">Teichvolumen</label>
+                  <output id="volume-display" for="pond-volume">15.000 Liter</output>
+                </div>
+                <input
+                  id="pond-volume"
+                  name="pond-volume"
+                  type="range"
+                  min="5000"
+                  max="300000"
+                  step="1000"
+                  value="15000"
+                >
+                <div class="slider-scale" aria-hidden="true">
+                  <span>5.000 l</span>
+                  <span>300.000 l</span>
+                </div>
+                <p class="slider-note">
+                  Für größere Anlagen bitte die Empfehlung als Richtwert nehmen und im Shop final abstimmen.
+                </p>
+              </div>
 
               <fieldset class="dose-mode">
                 <legend>Einsatz</legend>
-                <label class="mode-card">
+                <label class="mode-option">
                   <input type="radio" name="dose-mode" value="regular" checked>
                   <span>
                     <strong>Regelmäßige Nachdosierung</strong>
                     <small>Normale Dosis für eingefahrene Anlagen.</small>
                   </span>
                 </label>
-                <label class="mode-card">
+                <label class="mode-option">
                   <input type="radio" name="dose-mode" value="start">
                   <span>
                     <strong>Filterstart / stark belastet</strong>
@@ -124,24 +142,6 @@
                 </label>
               </fieldset>
             </form>
-
-            <div class="variant-grid package-grid" aria-label="Shop-Größen">
-              <article class="variant-card package-card">
-                <span class="variant-size">70 g</span>
-                <span class="variant-use">Kleine Dose für niedrigen Bedarf</span>
-                <span class="variant-price">ab 21,90 €</span>
-              </article>
-              <article class="variant-card package-card">
-                <span class="variant-size">140 g</span>
-                <span class="variant-use">Mittlere Dose für regelmäßige Nachdosierung</span>
-                <span class="variant-price">Shoppreis final</span>
-              </article>
-              <article class="variant-card package-card">
-                <span class="variant-size">280 g</span>
-                <span class="variant-use">Maxi-Dose für bis zu 150.000 l einmalig</span>
-                <span class="variant-price">bis 59,00 €</span>
-              </article>
-            </div>
           </section>
 
           <aside class="result-panel" aria-labelledby="result-title">
@@ -166,6 +166,10 @@
             <ul class="shop-check" id="package-list">
               <li>1x 70 g</li>
             </ul>
+
+            <p class="shop-note">
+              Im Shop wählst du die Dose und Anzahl final aus. Preise und Verfügbarkeit bleiben dort verbindlich.
+            </p>
 
             <a
               class="button primary wide"

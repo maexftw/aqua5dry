@@ -64,6 +64,26 @@ a.button {
   height: auto;
 }
 
+.product-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--teal-dark);
+  font-size: 1.18rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.product-brand img {
+  width: 56px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.product-brand strong {
+  color: var(--orange);
+}
+
 .header-nav {
   display: flex;
   gap: 22px;
@@ -694,6 +714,16 @@ details p {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(120%);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.sticky-cta.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .sticky-cta div {
@@ -754,6 +784,16 @@ details p {
 
   .brand img {
     width: 142px;
+  }
+
+  .product-brand {
+    gap: 8px;
+    font-size: 1.02rem;
+  }
+
+  .product-brand img {
+    width: 46px;
+    height: 38px;
   }
 
   .header-nav {

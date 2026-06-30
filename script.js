@@ -4,18 +4,18 @@ const PRODUCT_URL =
 const variants = {
   70: {
     label: "70 g",
-    note: "Einstiegsgroesse - ab 21,90 EUR",
-    checkout: "Geeignet, wenn Sie erst testen oder ein kleineres System nachdosieren moechten."
+    note: "Einstiegsgröße - ab 21,90 €",
+    checkout: "Geeignet, wenn Sie erst testen oder ein kleineres System nachdosieren möchten."
   },
   140: {
     label: "140 g",
-    note: "Mittelgroesse - finaler Shoppreis",
-    checkout: "Solide Wahl fuer regelmaessige Nachdosierung in mittleren Teichsystemen."
+    note: "Mittelgröße - finaler Shoppreis",
+    checkout: "Solide Wahl für regelmäßige Nachdosierung in mittleren Teichsystemen."
   },
   280: {
     label: "280 g",
     note: "Maxi-Dose - bis zu 150.000 l einmalig laut Quelle",
-    checkout: "Die groesste Variante fuer grosse Teiche oder planbare Saison-Nachdosierung."
+    checkout: "Die größte Variante für große Teiche oder planbare Saison-Nachdosierung."
   }
 };
 
@@ -40,6 +40,7 @@ const checkoutPrev = document.querySelector("#checkout-prev");
 const checkoutNext = document.querySelector("#checkout-next");
 const shopFinal = document.querySelector("#shop-final");
 const stepButtons = [...document.querySelectorAll("[data-step]")];
+const stickyCta = document.querySelector(".sticky-cta");
 
 function selectVariant(variantId) {
   state.selectedVariant = variantId;
@@ -61,7 +62,7 @@ function setQuantity(direction) {
 
 function addToCart() {
   if (!state.selectedVariant) {
-    selectionHint.textContent = "Bitte erst einen Inhalt auswaehlen.";
+    selectionHint.textContent = "Bitte erst einen Inhalt auswählen.";
     selectionHint.classList.remove("ready");
     return;
   }
@@ -87,7 +88,7 @@ function updateUI() {
 
   if (state.selectedVariant) {
     const selected = variants[state.selectedVariant];
-    selectionHint.textContent = `${selected.label} gewaehlt. Preis final im Shop.`;
+    selectionHint.textContent = `${selected.label} gewählt. Preis final im Shop.`;
     selectionHint.classList.add("ready");
   }
 
@@ -112,15 +113,23 @@ function updateUI() {
   shopFinal.href = PRODUCT_URL;
 }
 
+function updateStickyCta() {
+  if (!stickyCta) {
+    return;
+  }
+
+  stickyCta.classList.toggle("is-visible", window.scrollY > 280);
+}
+
 function getCheckoutContent(selected) {
   if (state.checkoutStep === 1) {
     return `
-      <h4>Auswahl bestaetigen</h4>
+      <h4>Auswahl bestätigen</h4>
       <p>${selected.checkout}</p>
       <ul>
         <li>Inhalt: ${selected.label}</li>
         <li>Menge: ${state.quantity}</li>
-        <li>Preisbereich: 21,90 bis 59,00 EUR je Dose, final im Shop</li>
+        <li>Preisbereich: 21,90 bis 59,00 € je Dose, final im Shop</li>
       </ul>
     `;
   }
@@ -128,7 +137,7 @@ function getCheckoutContent(selected) {
   if (state.checkoutStep === 2) {
     return `
       <h4>Lieferung</h4>
-      <p>Die Produktquelle kennzeichnet AQUA-5 DRY als sofort verfuegbar.</p>
+      <p>Die Produktquelle kennzeichnet AQUA-5 DRY als sofort verfügbar.</p>
       <ul>
         <li>Versandkosten und Lieferadresse werden im Shop berechnet.</li>
         <li>Der finale Warenkorb wird auf teichbedarf-discount.de abgeschlossen.</li>
@@ -168,4 +177,7 @@ stepButtons.forEach((button) => {
   });
 });
 
+window.addEventListener("scroll", updateStickyCta, { passive: true });
+
 updateUI();
+updateStickyCta();
